@@ -1,3 +1,4 @@
+import * as React from 'react'
 import Head from 'next/head'
 import Layout from '@/components/Layout'
 import Hero from '@/components/sections/Hero'
@@ -5,6 +6,7 @@ import TabsComponent from '@/components/tabs/TabsComponent'
 import NeedHelp from '@/components/sections/NeedHelp'
 import News from '@/components/sections/News'
 import Why from '@/components/sections/Why'
+
 
 
 export default function Home() {

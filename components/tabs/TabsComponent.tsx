@@ -71,9 +71,9 @@ const tabPanelData = [
 ];
 
 
-const StyledTab = styled(Tab)(({theme}) => ({
+// const StyledTab = styled(Tab)(({theme}) => ({
 
-}))
+// }))
 
 export default function TabsComponent() {
   const [value, setValue] = useState(0);

@@ -10,7 +10,6 @@
 //   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 //   const [modalImageIndex, setModalImageIndex] = useState(0);
 
-
 //   const carouselItems = [
 //     { imgSrc: '/images/depan.jpeg', caption: 'Gambar 1' },
 //     { imgSrc: '/images/depan-kiri.jpeg', caption: 'Gambar 2' },
@@ -53,7 +52,6 @@
 //     setSelectedImageIndex((prevIndex) => (prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1));
 //   };
 
-
 //   return (
 //     <Container>
 //       <Grid container spacing={2} style={{ marginTop: isMobile ? 50 : 100, backgroundColor: 'red' }}>
@@ -70,7 +68,7 @@
 //                 style: {
 //                     // padding: '10px',    // 1
 //                     // color: 'blue',      // 3,
-//                     margin: 0, 
+//                     margin: 0,
 //                     padding: 0,
 //                     // marginBottom: 40,
 //                 }
@@ -87,7 +85,7 @@
 //                     // marginTop: '50px', // 5
 //                     // textAlign: 'right' // 4
 //                 }
-        
+
 //             }}
 //             >
 //               {carouselItems.map((item, index) => (
@@ -120,10 +118,10 @@
 //         </Grid>
 //       </Grid>
 
-//       <Modal 
-//         open={modalOpen} 
-//         onClose={closeModal} 
-//         onKeyDown={handleKeyDown} 
+//       <Modal
+//         open={modalOpen}
+//         onClose={closeModal}
+//         onKeyDown={handleKeyDown}
 //         style={{
 //           display: 'flex',
 //           alignItems: 'center',
@@ -180,7 +178,6 @@
 //         </div>
 //       </Modal>
 
-
 //     </Container>
 //   );
 // }
@@ -190,16 +187,41 @@
 import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
 import CarouselCar from "../carousel/CarouselCar";
 
-type Props = {};
+interface MobilBekasComponentProps {
+  namaMobil: string;
+  harga: number;
+  judulDeskripsi: string;
+  listDeskripsi: string[];
+  listGambar: any
+}
 
-export default function Index({}: Props) {
+const MobilBekasComponent: React.FC<MobilBekasComponentProps> = ({
+  harga,
+  judulDeskripsi,
+  listDeskripsi,
+  namaMobil,
+  listGambar
+}) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box sx={{backgroundColor: '', py: isMobile ? '0rem' : '2rem', px: isMobile ? 0 : '3rem' }}>
-      <CarouselCar />
+    <Box
+      sx={{
+        backgroundColor: "",
+        py: isMobile ? "0rem" : "2rem",
+        px: isMobile ? 0 : "3rem",
+      }}
+    >
+      <CarouselCar
+        harga={harga}
+        judulDeskripsi={judulDeskripsi}
+        listDeskripsi={listDeskripsi}
+        namaMobil={namaMobil}
+        listGambar={listGambar}
+      />
     </Box>
   );
-}
+};
 
+export default MobilBekasComponent;

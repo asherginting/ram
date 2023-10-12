@@ -3,7 +3,15 @@ import React, { useState } from 'react';
 import { Typography, Container, Grid, Modal, Button, useMediaQuery, useTheme } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 
-function Index() {
+interface Props {
+  namaMobil: string
+  harga: number
+  judulDeskripsi: string
+  listDeskripsi: string[]
+  listGambar: any
+}
+
+const Index: React.FC<Props> = ({harga, judulDeskripsi, listDeskripsi, namaMobil,listGambar}) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,11 +53,13 @@ function Index() {
   };
 
   const prevImage = () => {
-    setSelectedImageIndex((prevIndex) => (prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1));
+    // setSelectedImageIndex((prevIndex) => (prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1));
+    setSelectedImageIndex((prevIndex) => (prevIndex === 0 ? listGambar.length - 1 : prevIndex - 1));
   };
 
   const nextImage = () => {
-    setSelectedImageIndex((prevIndex) => (prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1));
+    // setSelectedImageIndex((prevIndex) => (prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1));
+    setSelectedImageIndex((prevIndex) => (prevIndex === listGambar.length - 1 ? 0 : prevIndex + 1));
   };
 
 
@@ -83,7 +93,7 @@ function Index() {
         
             }}
             >
-              {carouselItems.map((item, index) => (
+              {listGambar.map((item, index) => (
                 <img
                   key={index}
                   src={item.imgSrc}
@@ -101,24 +111,27 @@ function Index() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography style={{fontWeight: 'bold', fontSize: 22, color: '#000'}}>
-            Daihatsu Ayla AT/2022
+            {namaMobil}
           </Typography>
           <Typography style={{fontWeight: 'bold', fontSize: 28, color: '#17376D'}}>
-            Rp 148.500.000
+            {harga}
           </Typography>
           <div style={{marginTop: 20}}>
             <Typography variant="h6" gutterBottom>
-              🚗 Temukan Kenyamanan dan Keandalan dalam Perjalanan Anda dengan Daihatsu Ayla AT/2022 🚗
+              {/* 🚗 Temukan Kenyamanan dan Keandalan dalam Perjalanan Anda dengan Daihatsu Ayla AT/2022 🚗 */}
+              {judulDeskripsi}
             </Typography>
-            <Typography variant="body1" gutterBottom>
-              – DP hanya 8 juta rupiah
-            </Typography>
-            <Typography variant="body1" gutterBottom>
+            {listDeskripsi.map((list, i) => (
+              <Typography key={i} variant="body1" gutterBottom>
+                – {list}
+              </Typography>
+            ))}
+            {/* <Typography variant="body1" gutterBottom>
               – Cicilan ringan 5.800.000 rupiah per bulan
             </Typography>
             <Typography variant="body1" gutterBottom>
               – Tenor fleksibel 5 tahun
-            </Typography>
+            </Typography> */}
             <Typography variant="body2" gutterBottom>
               Catatan: Harga tertera khusus untuk pembelian kredit. Untuk pembelian tunai, silakan tanyakan kepada admin kami.
             </Typography>

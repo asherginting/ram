@@ -16,7 +16,8 @@ import { useState } from "react";
 import NavMobile from "./NavMobile";
 import SearchBar from "../inputs/SearchBar";
 import NavMenuDropdown from "./NavMenuDropdown";
-import Image from 'next/image';
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 const navItems = [
   {
@@ -38,20 +39,29 @@ const navItems = [
 ];
 
 const DrawerContainer = styled(Drawer)(({ theme }) => ({
-  height: '100%',
-  backgroundColor: alpha(theme.palette.text.secondary, .85),
+  height: "100%",
+  backgroundColor: alpha(theme.palette.text.secondary, 0.85),
   "& .MuiDrawer-paper": {
-    height: 'auto',
-    borderRadius: '20px',
+    height: "auto",
+    borderRadius: "20px",
     top: 10,
     left: 10,
-    right: 10
-  }
+    right: 10,
+  },
 }));
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchMobileOpen, setSearchMobileOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const router = useRouter();
+
+  const handleSearch = () => {
+    console.log("asas");
+    if (query.trim() !== "") {
+      router.push(`/result?query=${query}`);
+    }
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -73,9 +83,14 @@ export default function Header() {
               display: "block",
             }}
           >
-            <Image src={require('../../public/images/logo-ram.png')} alt="Logo" width={140} height={30} />
+            <Image
+              src={require("../../public/images/logo-ram.png")}
+              alt="Logo"
+              width={140}
+              height={30}
+            />
           </Link>
-          <Box sx={{display: {xs: 'none', md: 'block'}}}>
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
             <SearchBar />
           </Box>
           <Stack
@@ -91,7 +106,7 @@ export default function Header() {
               />
             ))}
           </Stack>
-          <Box sx={{display: {xs: 'block', md: 'none'}}}>
+          <Box sx={{ display: { xs: "block", md: "none" } }}>
             <IconButton
               onClick={handleSearchMobile}
               sx={{ ml: 2, display: { md: "none" }, color: "white" }}
