@@ -21,10 +21,10 @@ export default function Home() {
       <main>
         <Hero />
         <TabsComponent />
-        <News />
+        {/* <News /> */}
         {/* <Testimonial /> */}
-        <NeedHelp />
-        <Why />
+        {/* <NeedHelp /> */}
+        {/* <Why /> */}
       </main>
     </Layout>
   )

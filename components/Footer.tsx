@@ -31,12 +31,12 @@ const footerMenu = [
       { menu: "Service Mobil", link: "#" },
     ],
   },
-  {
-    labelMenu: "Mitra Kami",
-    listMenu: [
-      { menu: "", link: "#" },
-    ],
-  },
+  // {
+  //   labelMenu: "Mitra Kami",
+  //   listMenu: [
+  //     { menu: "", link: "#" },
+  //   ],
+  // },
 ];
 
 const socialMedia = [
@@ -81,7 +81,7 @@ export default function Footer({}: Props) {
                         key={index}
                         variant="body2"
                         component={"a"}
-                        href={list.link}
+                        // href={list.link}
                         color={"footerText"}
                       >
                         {list.menu}

@@ -93,7 +93,7 @@ export default function Header() {
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <SearchBar />
           </Box>
-          <Stack
+          {/* <Stack
             spacing={3}
             direction={"row"}
             sx={{ display: { xs: "none", sm: "flex" } }}
@@ -105,7 +105,7 @@ export default function Header() {
                 menuItems={navItem.dropdownMenu}
               />
             ))}
-          </Stack>
+          </Stack> */}
           <Box sx={{ display: { xs: "block", md: "none" } }}>
             <IconButton
               onClick={handleSearchMobile}

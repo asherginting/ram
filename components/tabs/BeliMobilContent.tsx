@@ -10,13 +10,13 @@ type Props = {};
 export default function BeliMobilContent({}: Props) {
   return (
     <>
-      <Find />
+      {/* <Find /> */}
       <Rekomendasi />
       {/* {loading && <p>Loading...</p>}
       {!loading && hasMore && <button onClick={loadMoreItems}>Load More</button>} */}
-      <ByBrand />
+      {/* <ByBrand /> */}
       {/* <Pilih /> */}
-      <Guides />
+      {/* <Guides /> */}
     </>
   );
 }

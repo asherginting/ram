@@ -79,7 +79,7 @@ export default function NavMobile({
 
   return (
     <Box component="nav">
-      <NavMobileContainer
+      {/* <NavMobileContainer
         container={container}
         variant="temporary"
         open={mobileOpen}
@@ -90,7 +90,7 @@ export default function NavMobile({
         }}
       >
         {drawer}
-      </NavMobileContainer>
+      </NavMobileContainer> */}
     </Box>
   );
 }
