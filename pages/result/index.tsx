@@ -53,7 +53,7 @@ const SearchResult = (props: Props) => {
               </Typography>
               <Grid container>
                 {filteredResults.map((item, index) => (
-                  <Grid key={index} item xs={4}>
+                  <Grid key={index} item xs={6} md={4}>
                     <Link
                       href={`/mobilbekas/${item.namaMobil}`}
                       underline="none"

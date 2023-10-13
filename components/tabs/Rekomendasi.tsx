@@ -79,7 +79,7 @@ export default function Rekomendasi() {
         <Box sx={{ my: 2 }}>
           <Grid container spacing={{ xs: 2, md: 3 }}>
             {items.map((car, index) => (
-              <Grid key={index} item xs={4}>
+              <Grid key={index} item xs={6} md={4}>
                 {/* <Link href={`/mobilbekas/${car.namaMobil.replace(/\s+/g, "-").toLowerCase()}`} underline="none"> */}
                 <Link href={`/mobilbekas/${car.namaMobil}`} underline="none">
                   <RecommendationCard
