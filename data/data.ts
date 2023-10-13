@@ -14,8 +14,8 @@ export const carouselItems = [
 
 export const listMobil = [
   {
-    namaMobil: "daihatsu llx",
-    harga: 123,
+    namaMobil: "Daihatsu Ayla Ghu Jui 2006",
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -31,7 +31,7 @@ export const listMobil = [
   },
   {
     namaMobil: "daihatsu def",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -47,7 +47,7 @@ export const listMobil = [
   },
   {
     namaMobil: "daihatsu ksja",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -63,7 +63,7 @@ export const listMobil = [
   },
   {
     namaMobil: "toyota loas",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -79,7 +79,7 @@ export const listMobil = [
   },
   {
     namaMobil: "toyota inob",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -95,7 +95,7 @@ export const listMobil = [
   },
   {
     namaMobil: "toyota lasa",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -111,7 +111,7 @@ export const listMobil = [
   },
   {
     namaMobil: "honda papa",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -127,7 +127,7 @@ export const listMobil = [
   },
   {
     namaMobil: "honda hyut",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -143,7 +143,7 @@ export const listMobil = [
   },
   {
     namaMobil: "honda dwe",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -159,7 +159,7 @@ export const listMobil = [
   },
   {
     namaMobil: "suzuki dfas asada",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -175,7 +175,7 @@ export const listMobil = [
   },
   {
     namaMobil: "suzuki mcv aasd",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -191,7 +191,7 @@ export const listMobil = [
   },
   {
     namaMobil: "suzuki qer hui",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -207,7 +207,7 @@ export const listMobil = [
   },
   {
     namaMobil: "suzuki kioa msms",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -223,7 +223,7 @@ export const listMobil = [
   },
   {
     namaMobil: "nissan laps da",
-    harga: 123,
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -239,7 +239,23 @@ export const listMobil = [
   },
   {
     namaMobil: "nissan dfe efen",
-    harga: 123,
+    harga: 12300000,
+    lokasi: "Kota Batam",
+    gambar: "/images/innova.jpeg",
+    deskripsi: {
+      judul:
+        "🚗 Temukan Kenyamanan dan Keandalan dalam Perjalanan Anda dengan Daihatsu Ayla AT/2022 🚗",
+      detail: [
+        "DP hanya 8 juta rupiah",
+        "DP hanya 8 juta rupiah",
+        "DP hanya 8 juta rupiah",
+      ],
+      gambarDetail: carouselItems,
+    },
+  },
+  {
+    namaMobil: "nissan abc",
+    harga: 12300000,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
     deskripsi: {
@@ -270,22 +286,6 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "nissan abc",
-    harga: 123,
-    lokasi: "Kota Batam",
-    gambar: "/images/innova.jpeg",
-    deskripsi: {
-      judul:
-        "🚗 Temukan Kenyamanan dan Keandalan dalam Perjalanan Anda dengan Daihatsu Ayla AT/2022 🚗",
-      detail: [
-        "DP hanya 8 juta rupiah",
-        "DP hanya 8 juta rupiah",
-        "DP hanya 8 juta rupiah",
-      ],
-      gambarDetail: carouselItems,
-    },
-  },
-  {
     namaMobil: "mobil abc",
     harga: 123,
     lokasi: "Kota Batam",
@@ -814,7 +814,7 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "mobil abc",
+    namaMobil: "Daihatsu abc",
     harga: 123,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
@@ -830,7 +830,7 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "mobil abc",
+    namaMobil: "Daihatsu abc",
     harga: 123,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
@@ -846,7 +846,7 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "mobil abc",
+    namaMobil: "Daihatsu abc",
     harga: 123,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
@@ -862,7 +862,7 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "mobil abc",
+    namaMobil: "Daihatsu abc",
     harga: 123,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
@@ -878,7 +878,7 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "mobil abc",
+    namaMobil: "Daihatsu abc",
     harga: 123,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
@@ -894,7 +894,7 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "mobil abc",
+    namaMobil: "Daihatsu abc",
     harga: 123,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",
@@ -910,7 +910,7 @@ export const listMobil = [
     },
   },
   {
-    namaMobil: "mobil abc",
+    namaMobil: "Nissan abc",
     harga: 123,
     lokasi: "Kota Batam",
     gambar: "/images/innova.jpeg",

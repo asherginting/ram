@@ -50,13 +50,15 @@ export default function OtherContent({}: Props) {
         <ButtonSecondary
           size="large"
           sx={{
-            width: {xs: '60%', md: "30%"},
+            width: { xs: "60%", md: "30%" },
             display: "block",
             marginInline: "auto",
             mt: "2.5rem",
           }}
         >
-          Jual Sekarang
+          <a href="https://wa.me/6285207907976" target="_blank">
+            Jual Sekarang
+          </a>
         </ButtonSecondary>
       </Container>
     </BoxContainer>

@@ -1,7 +1,7 @@
 import { Box, Divider, InputBase, TextField, styled } from "@mui/material";
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import SelectField from "./SelectField";
+// import SelectField from "./SelectField";
 import { useRouter } from "next/router";
 
 // interface SearchBarProps {
@@ -22,10 +22,11 @@ const SearchBar = () => {
     if (query.trim() !== "") {
       router.push(`/result?search=${encodeURIComponent(query)}`);
     }
-    setQuery("")
+    setQuery("");
+    console.log("sukses");
   };
 
-  const options = ["Certified", "Lelang"];
+  // const options = ["Certified", "Lelang"];
 
   const SearchIconWrapper = styled("div")(({ theme }) => ({
     padding: theme.spacing(0, 2),
@@ -61,32 +62,33 @@ const SearchBar = () => {
 
   return (
     <Box
-      component="form"
+      // component="form"
       sx={{
         position: "relative",
         borderRadius: "50px",
         backgroundColor: "#FFF",
         paddingRight: "1rem",
         marginLeft: 0,
-        width: "auto",
+        width: "40ch",
         alignItems: "center",
         display: "flex",
+        paddingY: "4px",
       }}
-      noValidate
-      autoComplete="off"
+      // noValidate
+      // autoComplete="off"
     >
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
       <InputBase
-        placeholder="Search…"
+        placeholder="Masukan merk mobil"
         inputProps={{ "aria-label": "search" }}
         value={query}
         sx={{
-          color: 'inherit',
-          width: '100%',
+          color: "inherit",
+          width: "100%",
           paddingLeft: 7,
-          fontSize: '.9rem',
+          fontSize: ".9rem",
         }}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => {
@@ -95,8 +97,8 @@ const SearchBar = () => {
           }
         }}
       />
-      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-      <SelectField defaultValue={"Certified"} options={options} />
+      {/* <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+      <SelectField defaultValue={"Certified"} options={options} /> */}
     </Box>
   );
 };

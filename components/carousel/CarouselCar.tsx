@@ -1,48 +1,63 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from 'react';
-import { Typography, Container, Grid, Modal, Button, useMediaQuery, useTheme } from '@mui/material';
-import Carousel from 'react-material-ui-carousel';
+import React, { useState } from "react";
+import {
+  Typography,
+  Container,
+  Grid,
+  Modal,
+  Button,
+  useMediaQuery,
+  useTheme,
+  Box,
+} from "@mui/material";
+import Carousel from "react-material-ui-carousel";
+import { formatCurrency } from "@/lib/formatCurrency";
 
 interface Props {
-  namaMobil: string
-  harga: number
-  judulDeskripsi: string
-  listDeskripsi: string[]
-  listGambar: any
+  namaMobil: string;
+  harga: number;
+  judulDeskripsi: string;
+  listDeskripsi: string[];
+  listGambar: any;
 }
 
-const Index: React.FC<Props> = ({harga, judulDeskripsi, listDeskripsi, namaMobil,listGambar}) => {
+const Index: React.FC<Props> = ({
+  harga,
+  judulDeskripsi,
+  listDeskripsi,
+  namaMobil,
+  listGambar,
+}) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [modalImageIndex, setModalImageIndex] = useState(0);
 
+  // const carouselItems = [
+  //   { imgSrc: "/images/depan.jpeg", caption: "Gambar 1" },
+  //   { imgSrc: "/images/depan-kiri.jpeg", caption: "Gambar 2" },
+  //   { imgSrc: "/images/depan-kanan.jpeg", caption: "Gambar 3" },
+  //   { imgSrc: "/images/belakang.jpeg", caption: "Gambar 4" },
+  //   { imgSrc: "/images/belakang-kanan.jpeg", caption: "Gambar 5" },
+  //   { imgSrc: "/images/belakang-kiri.jpeg", caption: "Gambar 6" },
+  //   { imgSrc: "/images/belakang-atap.jpeg", caption: "Gambar 7" },
+  //   { imgSrc: "/images/dashboard-kanan.jpeg", caption: "Gambar 8" },
+  //   { imgSrc: "/images/dashboard.jpeg", caption: "Gambar 9" },
+  //   { imgSrc: "/images/mesin.jpeg", caption: "Gambar 10" },
+  //   { imgSrc: "/images/speed.jpeg", caption: "Gambar 11" },
+  // ];
 
-  const carouselItems = [
-    { imgSrc: '/images/depan.jpeg', caption: 'Gambar 1' },
-    { imgSrc: '/images/depan-kiri.jpeg', caption: 'Gambar 2' },
-    { imgSrc: '/images/depan-kanan.jpeg', caption: 'Gambar 3' },
-    { imgSrc: '/images/belakang.jpeg', caption: 'Gambar 4' },
-    { imgSrc: '/images/belakang-kanan.jpeg', caption: 'Gambar 5' },
-    { imgSrc: '/images/belakang-kiri.jpeg', caption: 'Gambar 6' },
-    { imgSrc: '/images/belakang-atap.jpeg', caption: 'Gambar 7' },
-    { imgSrc: '/images/dashboard-kanan.jpeg', caption: 'Gambar 8' },
-    { imgSrc: '/images/dashboard.jpeg', caption: 'Gambar 9' },
-    { imgSrc: '/images/mesin.jpeg', caption: 'Gambar 10' },
-    { imgSrc: '/images/speed.jpeg', caption: 'Gambar 11' },
-  ];
-
-  const openModal = (imageIndex) => {
+  const openModal = (imageIndex: any) => {
     setSelectedImageIndex(imageIndex);
     setModalImageIndex(imageIndex);
     setModalOpen(true);
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === 'ArrowLeft') {
+  const handleKeyDown = (event: any) => {
+    if (event.key === "ArrowLeft") {
       prevImage();
-    } else if (event.key === 'ArrowRight') {
+    } else if (event.key === "ArrowRight") {
       nextImage();
     }
   };
@@ -54,127 +69,151 @@ const Index: React.FC<Props> = ({harga, judulDeskripsi, listDeskripsi, namaMobil
 
   const prevImage = () => {
     // setSelectedImageIndex((prevIndex) => (prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1));
-    setSelectedImageIndex((prevIndex) => (prevIndex === 0 ? listGambar.length - 1 : prevIndex - 1));
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === 0 ? listGambar.length - 1 : prevIndex - 1
+    );
   };
 
   const nextImage = () => {
     // setSelectedImageIndex((prevIndex) => (prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1));
-    setSelectedImageIndex((prevIndex) => (prevIndex === listGambar.length - 1 ? 0 : prevIndex + 1));
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === listGambar.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
-
   return (
-    <Container>
+    <>
       <Grid container spacing={2} style={{ marginTop: isMobile ? 50 : 70 }}>
-        <Grid item xs={12} md={6} style={{height: '100%'}}>
-            <Carousel
-              navButtonsAlwaysVisible={true}
-              navButtonsProps={{
-                style: {
-                  textAlign: 'center',
-                },
-              }}
-              indicatorIconButtonProps={{
-                style: {
-                    margin: 0, 
-                    padding: 0,
-                }
+        <Grid item xs={12} md={6} style={{ height: "100%" }}>
+          <Carousel
+            navButtonsAlwaysVisible={true}
+            navButtonsProps={{
+              style: {
+                textAlign: "center",
+              },
+            }}
+            indicatorIconButtonProps={{
+              style: {
+                margin: 0,
+                padding: 0,
+              },
             }}
             activeIndicatorIconButtonProps={{
-                style: {
-                  color: '#17376D',
-                }
+              style: {
+                color: "#17376D",
+              },
             }}
             indicatorContainerProps={{
-                style: {
-                  textAlign: 'center',
-                  marginTop: '10px', 
-                }
-        
+              style: {
+                textAlign: "center",
+                marginTop: "10px",
+              },
             }}
-            >
-              {listGambar.map((item, index) => (
-                <img
-                  key={index}
-                  src={item.imgSrc}
-                  alt={item.caption}
-                  style={{
-                    cursor: 'pointer',
-                    height: isMobile ? 200 : 'auto',
-                    width: isMobile ? 350 : 565,
-                    borderRadius: 20,
-                  }}
-                  onClick={() => openModal(index)}
-                />
-              ))}
-            </Carousel>
+          >
+            {listGambar.map((item: any, index: number) => (
+              <img
+                key={index}
+                src={item.imgSrc}
+                alt={item.caption}
+                style={{
+                  cursor: "pointer",
+                  height: isMobile ? 250 : "auto",
+                  // width: isMobile ? 350 : 565,
+                  width: "100%",
+                  borderRadius: 20,
+                }}
+                onClick={() => openModal(index)}
+              />
+            ))}
+          </Carousel>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography style={{fontWeight: 'bold', fontSize: 22, color: '#000'}}>
-            {namaMobil}
-          </Typography>
-          <Typography style={{fontWeight: 'bold', fontSize: 28, color: '#17376D'}}>
-            {harga}
-          </Typography>
-          <div style={{marginTop: 20}}>
-            <Typography variant="h6" gutterBottom>
-              {/* 🚗 Temukan Kenyamanan dan Keandalan dalam Perjalanan Anda dengan Daihatsu Ayla AT/2022 🚗 */}
-              {judulDeskripsi}
+          <Box sx={{
+            paddingX: '20px'
+          }}>
+            <Typography
+              style={{ fontWeight: "bold", fontSize: 22, color: "#000" }}
+            >
+              {namaMobil}
             </Typography>
-            {listDeskripsi.map((list, i) => (
-              <Typography key={i} variant="body1" gutterBottom>
-                – {list}
+            <Typography
+              style={{ fontWeight: "bold", fontSize: 28, color: "#17376D" }}
+            >
+              {formatCurrency(harga)}
+            </Typography>
+            <div style={{ marginTop: 20 }}>
+              <Typography variant="h6" gutterBottom>
+                {/* 🚗 Temukan Kenyamanan dan Keandalan dalam Perjalanan Anda dengan Daihatsu Ayla AT/2022 🚗 */}
+                {judulDeskripsi}
               </Typography>
-            ))}
-            {/* <Typography variant="body1" gutterBottom>
-              – Cicilan ringan 5.800.000 rupiah per bulan
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              – Tenor fleksibel 5 tahun
-            </Typography> */}
-            <Typography variant="body2" gutterBottom>
-              Catatan: Harga tertera khusus untuk pembelian kredit. Untuk pembelian tunai, silakan tanyakan kepada admin kami.
-            </Typography>
-            <Typography variant="body2" gutterBottom>
-              Tawaran terbatas! Segera hubungi kami untuk informasi lebih lanjut.
-            </Typography>
-          </div>
-          <Button style={{backgroundColor: '#FAB500', color: '#fff', marginTop: 20}}>
-            Hubungi Sekarang
-          </Button>
+              {listDeskripsi.map((list, i) => (
+                <Typography key={i} variant="body1" gutterBottom>
+                  – {list}
+                </Typography>
+              ))}
+              {/* <Typography variant="body1" gutterBottom>
+                – Cicilan ringan 5.800.000 rupiah per bulan
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                – Tenor fleksibel 5 tahun
+              </Typography> */}
+              <Typography variant="body2" gutterBottom>
+                Catatan: Harga tertera khusus untuk pembelian kredit. Untuk
+                pembelian tunai, silakan tanyakan kepada admin kami.
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+                Tawaran terbatas! Segera hubungi kami untuk informasi lebih
+                lanjut.
+              </Typography>
+            </div>
+            <Button
+              style={{
+                backgroundColor: "#FAB500",
+                color: "#fff",
+                marginTop: 20,
+              }}
+            >
+              Hubungi Sekarang
+            </Button>
+          </Box>
         </Grid>
       </Grid>
 
-      <Modal 
-        open={modalOpen} 
-        onClose={closeModal} 
-        onKeyDown={handleKeyDown} 
+      <Modal
+        open={modalOpen}
+        onClose={closeModal}
+        onKeyDown={handleKeyDown}
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-            outline: 'none',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            outline: "none",
           }}
-          onClick={closeModal} 
+          onClick={closeModal}
         >
           <div>
-            <img src={carouselItems[selectedImageIndex].imgSrc} alt="Preview" style={{ maxWidth: '90%',  margin: 'auto', display: 'block' }} />
+            <img
+              src={listGambar[selectedImageIndex].imgSrc}
+              alt="Preview"
+              style={{ maxWidth: "90%", margin: "auto", display: "block" }}
+            />
             <div
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                position: 'absolute',
-                top: '50%',
-                left: '15%',
-                right: '15%',
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                position: "absolute",
+                top: "50%",
+                left: "15%",
+                right: "15%",
               }}
             >
               <Button
@@ -199,10 +238,10 @@ const Index: React.FC<Props> = ({harga, judulDeskripsi, listDeskripsi, namaMobil
           </div>
         </div>
       </Modal>
-
-
-    </Container>
+    </>
+    // <Container>
+    // </Container>
   );
-}
+};
 
 export default Index;

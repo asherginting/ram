@@ -192,7 +192,7 @@ interface MobilBekasComponentProps {
   harga: number;
   judulDeskripsi: string;
   listDeskripsi: string[];
-  listGambar: any
+  listGambar: any;
 }
 
 const MobilBekasComponent: React.FC<MobilBekasComponentProps> = ({
@@ -200,26 +200,48 @@ const MobilBekasComponent: React.FC<MobilBekasComponentProps> = ({
   judulDeskripsi,
   listDeskripsi,
   namaMobil,
-  listGambar
+  listGambar,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box
-      sx={{
-        backgroundColor: "",
-        py: isMobile ? "0rem" : "2rem",
-        px: isMobile ? 0 : "3rem",
-      }}
-    >
-      <CarouselCar
-        harga={harga}
-        judulDeskripsi={judulDeskripsi}
-        listDeskripsi={listDeskripsi}
-        namaMobil={namaMobil}
-        listGambar={listGambar}
-      />
+    // <Box
+    //   sx={{
+    //     backgroundColor: "",
+    //     py: isMobile ? "0rem" : "2rem",
+    //     px: isMobile ? 0 : "3rem",
+    //   }}
+    // >
+    // </Box>
+    <Box sx={{
+      minHeight: '100vh',
+      paddingY: '2rem',
+      display: 'flex',
+      placeContent: 'center',
+      alignItems: 'center'
+    }}>
+      {isMobile ? (
+        <Box>
+          <CarouselCar
+            harga={harga}
+            judulDeskripsi={judulDeskripsi}
+            listDeskripsi={listDeskripsi}
+            namaMobil={namaMobil}
+            listGambar={listGambar}
+          />
+        </Box>
+      ) : (
+        <Container>
+          <CarouselCar
+            harga={harga}
+            judulDeskripsi={judulDeskripsi}
+            listDeskripsi={listDeskripsi}
+            namaMobil={namaMobil}
+            listGambar={listGambar}
+          />
+        </Container>
+      )}
     </Box>
   );
 };

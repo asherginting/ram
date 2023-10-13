@@ -32,11 +32,11 @@ const SearchResult = (props: Props) => {
       </Head>
       <Box
         sx={{
-          marginY: "8rem",
-          // minHeight: "100vh",
-          // display: 'flex',
-          // placeContent: 'center',
-          // alignItems: 'center'
+          paddingY: filteredResults.length > 3 ? "6rem" : "0",
+          minHeight: "100vh",
+          display: 'flex',
+          placeContent: 'center',
+          alignItems: 'center'
         }}
       >
         <Container>

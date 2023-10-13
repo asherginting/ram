@@ -1,3 +1,4 @@
+import { formatCurrency } from '@/lib/formatCurrency'
 import { LocationCity } from '@mui/icons-material'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
 import React from 'react'
@@ -23,7 +24,7 @@ export default function RecommendationCard({image, merk, price, location}: Props
           <Typography variant="h6" component={"p"} color={'bgNav'}>
             {merk}
           </Typography>
-          <Typography variant='h6' component={'p'} color={'primary'}>Rp {price}</Typography>
+          <Typography variant='body2' component={'p'} color={'primary'}>{formatCurrency(price)}</Typography>
           <Typography variant='subtitle2' component={'div'} sx={{display: 'flex', alignItems: 'center', gap: '8px'}}>
             <LocationCity />
             {location}
